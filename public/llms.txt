@@ -1,0 +1,2 @@
+## Pages
+- [Manal Imran - Full-Stack Developer & AI Integration Specialist](/portfolio): Portfolio of Manal Imran, a full-stack developer with 8+ years of experience in React, Node.js, Python, and AI integration. Building intelligent web solutions with modern technologies.
