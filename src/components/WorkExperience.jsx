@@ -73,7 +73,7 @@ const WorkExperience = () => {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-4 border-purple-900 z-10" />
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#A489AD] rounded-full border-4 border-purple-900 z-10" />
 
                 {/* Content card */}
                 <div className={`w-full md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
@@ -82,7 +82,7 @@ const WorkExperience = () => {
                     className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-purple-300/20 shadow-lg hover:shadow-2xl transition-all duration-300"
                   >
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-[#A489AD] rounded-lg flex items-center justify-center flex-shrink-0">
                         <Briefcase className="w-6 h-6 text-white" />
                       </div>
                       <div className="flex-1">

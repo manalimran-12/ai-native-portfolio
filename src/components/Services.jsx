@@ -60,7 +60,7 @@ const Services = () => {
                 whileHover={{ y: -10, transition: { duration: 0.2 } }}
                 className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-purple-300/20 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-[#A489AD] rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
