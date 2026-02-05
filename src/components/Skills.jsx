@@ -82,7 +82,7 @@ const Skills = () => {
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 + skillIndex * 0.1, ease: 'easeOut' }}
-                        className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                        className="h-full bg-[#A489AD] rounded-full"
                       />
                     </div>
                   </div>

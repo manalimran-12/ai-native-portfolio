@@ -10,8 +10,8 @@ function App() {
     <Router>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/" element={<PortfolioPage />} />
+        {/* <Route path="/portfolio" element={<PortfolioPage />} /> */}
       </Routes>
     </Router>
   );

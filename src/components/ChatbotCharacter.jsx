@@ -35,7 +35,7 @@ const ChatbotCharacter = ({ onOpenChat }) => {
           {/* Character image */}
           <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1684369176170-463e84248b70"
+              src="/bitmoji.png"
               alt="AI Assistant Character"
               className="w-full h-full object-cover"
             />
@@ -71,7 +71,7 @@ const ChatbotCharacter = ({ onOpenChat }) => {
         <Button
           onClick={onOpenChat}
           size="lg"
-          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-6 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+          className="bg-[#A489AD] text-black font-semibold px-8 py-6 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
         >
           <MessageCircle className="w-5 h-5 mr-2" />
           Chat with AI Assistant
