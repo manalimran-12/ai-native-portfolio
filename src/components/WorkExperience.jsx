@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar } from 'lucide-react';
@@ -42,7 +41,7 @@ const experiences = [
 const WorkExperience = () => {
   return (
     <section className="py-20 px-4" id="experience">
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full max-w-screen-2xl mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,9 +57,9 @@ const WorkExperience = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-purple-500/30 hidden md:block" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-purple-500/20 hidden md:block" />
 
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -76,10 +75,10 @@ const WorkExperience = () => {
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#A489AD] rounded-full border-4 border-purple-900 z-10" />
 
                 {/* Content card */}
-                <div className={`w-full md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                <div className={`w-full md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:pr-14' : 'md:pl-14'}`}>
                   <motion.div
                     whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                    className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-purple-300/20 shadow-lg hover:shadow-2xl transition-all duration-300"
+                    className="bg-[#2f2f2f] backdrop-blur-lg rounded-xl p-8 min-h-[220px] border border-[#A489AD]/18 shadow-lg hover:shadow-2xl transition-all duration-300"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-12 h-12 bg-[#A489AD] rounded-lg flex items-center justify-center flex-shrink-0">
