@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, User, MessageSquare } from 'lucide-react';
@@ -70,7 +69,7 @@ const ContactMe = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-purple-300/20 shadow-2xl"
+          className="bg-[#2f2f2f] backdrop-blur-lg rounded-2xl p-8 border border-[#A489AD]/20 shadow-2xl"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Field */}

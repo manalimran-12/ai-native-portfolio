@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, TrendingUp } from 'lucide-react';
@@ -51,7 +50,7 @@ const Projects = () => {
 
   return (
     <section className="py-20 px-4 bg-black/20" id="projects">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full max-w-screen-2xl mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +73,7 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              className="bg-white/10 backdrop-blur-lg rounded-xl overflow-hidden border border-purple-300/20 shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-[#2f2f2f] backdrop-blur-lg rounded-xl overflow-hidden border border-[#A489AD]/20 shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">

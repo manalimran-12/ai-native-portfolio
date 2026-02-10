@@ -12,10 +12,13 @@ import WorkExperience from '@/components/WorkExperience';
 import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
 import FluidCursor from '@/components/FluidCursor';
+import InlineChatInterface from '@/components/InlineChatInterface';
 
 const PortfolioPage = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [inlineOpen, setInlineOpen] = useState(false);
+  const [inlineInitialMessage, setInlineInitialMessage] = useState('');
 
   const handleDownloadCV = () => {
     toast({
@@ -23,6 +26,18 @@ const PortfolioPage = () => {
       description: "CV download feature coming soon! Contact me directly for my resume.",
       duration: 3000
     });
+  };
+
+  const handleStartInlineChat = (message = '') => {
+    // Close sidebar chat if open
+    setIsChatOpen(false);
+    setInlineInitialMessage(message);
+    setInlineOpen(true);
+    // scroll to the inline chat area inside the hero so user sees it
+    setTimeout(() => {
+      const el = document.querySelector('#inline-chat-hero');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
   };
 
   const scrollToSection = (sectionId) => {
@@ -132,46 +147,59 @@ const PortfolioPage = () => {
           )}
         </header>
 
-        {/* Main Content */}
+        {/* Main Content: single-column layout for cleaner chat UX */}
         <main className="pt-20 relative z-10">
-          {/* Hero Section with Chatbot */}
-          <section className="min-h-screen flex items-center justify-center px-4 py-20">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                  Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A489AD] to-white">Manal Imran</span>
-                </h1>
-                <p className="text-xl md:text-2xl text-[#A489AD] mb-12">
-                  Full-Stack Developer & AI Integration Specialist
+          <div className="max-w-5xl mx-auto px-4">
+            {/* Hero Section with centered chat entry */}
+            <section className="min-h-screen flex flex-col items-center justify-center py-20">
+              <div className="w-full text-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="max-w-3xl mx-auto"
+                >
+                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A489AD] to-white">Manal Imran</span>
+                  </h1>
+                  <p className="text-lg md:text-xl text-[#A489AD] mb-8">
+                    Full-Stack Developer & AI Integration Specialist
+                  </p>
+                </motion.div>
+
+                <div className="mx-auto w-full">
+                  <ChatbotCharacter onStartInlineChat={handleStartInlineChat} />
+                </div>
+
+                {/* Inline chat appears directly below the hero input for a single-column flow */}
+                {inlineOpen && (
+                  <div id="inline-chat-hero" className="mt-8 w-full flex justify-center">
+                    <InlineChatInterface initialMessage={inlineInitialMessage} onClose={() => setInlineOpen(false)} />
+                  </div>
+                )}
+              </div>
+            </section>
+
+            {/* Portfolio Sections in single column */}
+            <div className="space-y-20">
+              <Services />
+              <Skills />
+              <WorkExperience />
+              <Projects />
+              <ContactMe />
+            </div>
+
+            {/* Footer */}
+            <footer className="bg-black/80 backdrop-blur-lg border-t border-[#A489AD]/20 py-8 mt-20">
+              <div className="max-w-7xl mx-auto px-4 text-center">
+                <p className="text-[#A489AD] text-sm">
+                  © 2026 Manal Imran. Built with React, Tailwind CSS & Framer Motion.
                 </p>
-              </motion.div>
-
-              <ChatbotCharacter onOpenChat={() => setIsChatOpen(true)} />
-            </div>
-          </section>
-
-          {/* Portfolio Sections */}
-          <Services />
-          <Skills />
-          <WorkExperience />
-          <Projects />
-          <ContactMe />
-
-          {/* Footer */}
-          <footer className="bg-black/80 backdrop-blur-lg border-t border-[#A489AD]/20 py-8 mt-20">
-            <div className="max-w-7xl mx-auto px-4 text-center">
-              <p className="text-[#A489AD] text-sm">
-                © 2026 Manal Imran. Built with React, Tailwind CSS & Framer Motion.
-              </p>
-            </div>
-          </footer>
+              </div>
+            </footer>
+          </div>
         </main>
 
-        {/* Chat Interface */}
         <ChatInterface isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
       </div>
     </>

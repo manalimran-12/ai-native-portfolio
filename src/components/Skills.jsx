@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -43,8 +42,8 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="py-20 px-4 bg-black/20" id="skills">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4" id="skills">
+      <div className="w-full max-w-screen-2xl mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +65,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
-              className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-purple-300/20 shadow-lg"
+              className="bg-[#2f2f2f] backdrop-blur-lg rounded-xl p-6 border border-[#A489AD]/20 shadow-lg"
             >
               <h3 className="text-2xl font-bold text-white mb-6">{category.category}</h3>
               <div className="space-y-4">
