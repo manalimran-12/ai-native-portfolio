@@ -50,11 +50,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logo-yuvi.svg",
+        url: "/logo-manal.svg",
         sizes: "any",
       }
     ],
-    shortcut: "/logo-yuvi.svg?v=2",
+    shortcut: "/logo-manal.svg?v=2",
     apple: "/apple-touch-icon.svg?v=2",
   },
 };
@@ -68,7 +68,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <link rel="icon" href="/logo-yuvi.svg" sizes="any" />
+        <link rel="icon" href="/logo-manal.svg" sizes="any" />
         {/* Google Analytics */}
         <Script
           async
@@ -91,7 +91,7 @@ export default function RootLayout({
       <body
         className={cn(
           // "min-h-screen bg-background font-sans antialiased",
-          "min-h-screen bg-white text-black dark:bg-black dark:text-white font-sans antialiased transition-colors duration-500 ease-in-out",
+          "min-h-screen bg-background text-foreground font-sans antialiased transition-colors duration-500 ease-in-out",
           inter.variable,
         )}
       >

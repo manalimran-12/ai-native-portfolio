@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Award, Code, GraduationCap, Mail, MessageSquare } from 'lucide-react';
+import { motion, type Variants } from 'framer-motion';
+import { Award, Code, Mail, MessageSquare } from 'lucide-react';
 import React from 'react';
 
 interface ChatLandingProps {
@@ -30,7 +30,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
   ];
 
   // Animation variants for staggered animation
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -40,7 +40,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -62,10 +62,10 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
       {/* Welcome message */}
       <motion.div className="mb-8 text-center" variants={itemVariants}>
         <h2 className="mb-3 text-2xl font-semibold">
-          I'm Yuvraj's digital twin
+          I'm Manal's digital twin
         </h2>
         <p className="text-muted-foreground mx-auto max-w-md">
-          The first portfolio that fit YOU needs.
+          Ask me anything about my skills, experience, or projects.
         </p>
       </motion.div>
 

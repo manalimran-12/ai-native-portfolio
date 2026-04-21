@@ -367,7 +367,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen text-foreground">
       {/* ─────────────────── Navbar ─────────────────── */}
       <nav
         className={`fixed top-0 right-0 left-0 z-30 transition-all duration-300 ${

@@ -126,12 +126,6 @@ export default function ChatPanel({
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Link
-              href="/chat"
-              className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-700 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
-            >
-              Full chat <ExternalLink className="h-3 w-3" />
-            </Link>
             <button
               onClick={() => onOpenChange(false)}
               className="rounded-lg p-2 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"

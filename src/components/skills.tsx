@@ -1,176 +1,97 @@
-'use client';
-
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Cpu, PenTool, Users } from 'lucide-react';
+
+const skillCategories = [
+  {
+    category: 'Frontend',
+    skills: [
+      { name: 'React & TypeScript', level: 95 },
+      { name: 'Tailwind CSS', level: 90 },
+      { name: 'Next.js & Vue.js', level: 85 },
+      { name: 'Framer Motion', level: 88 }
+    ]
+  },
+  {
+    category: 'Backend',
+    skills: [
+      { name: 'Node.js & Express', level: 92 },
+      { name: 'Python & FastAPI', level: 87 },
+      { name: 'RESTful APIs', level: 93 },
+      { name: 'GraphQL', level: 80 }
+    ]
+  },
+  {
+    category: 'Databases',
+    skills: [
+      { name: 'MongoDB', level: 90 },
+      { name: 'PostgreSQL', level: 88 },
+      { name: 'MySQL', level: 85 },
+      { name: 'Redis', level: 82 }
+    ]
+  },
+  {
+    category: 'Tools & AI',
+    skills: [
+      { name: 'Git & Docker', level: 91 },
+      { name: 'AWS & Vercel', level: 84 },
+      { name: 'OpenAI API', level: 89 },
+      { name: 'LangChain', level: 86 }
+    ]
+  }
+];
 
 const Skills = () => {
-  const skillsData = [
-    {
-      category: 'Languages & Web Development',
-      icon: <Code className="h-5 w-5" />,
-      skills: [
-        'Python',
-        'C++',
-        'SQL',
-        'JavaScript/TypeScript',
-        'React',
-        'Next.js',
-        'Node.js',
-        'HTML/CSS',
-        'Tailwind CSS',
-        'Bootstrap',
-        'Flask',
-        'Django',
-      ],
-      color: 'bg-blue-50 text-blue-600 border border-blue-200',
-    },
-    {
-      category: 'Data Science & AI',
-      icon: <Cpu className="h-5 w-5" />,
-      skills: [
-        'Pandas',
-        'NumPy',
-        'Scikit-learn',
-        'PyTorch',
-        'Keras',
-        'OpenAI API',
-        'Hugging Face Transformers',
-        'LangChain',
-        'Streamlit',
-        'Plotly',
-        'Matplotlib',
-        'Seaborn',
-        'TensorFlow',
-        'Machine Learning',
-        'AI Agents',
-        'Prompt engineering',
-        'Vercel AI SDK',
-        'Power BI',
-        'Tableau',
-        'Dash',
-      ],
-      color: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
-    },
-    {
-      category: 'Tools & Platforms',
-      icon: <PenTool className="h-5 w-5" />,
-      skills: [
-        'Git',
-        'GitHub', 
-        'VS Code', 
-        'Jupyter Notebook',
-        'Docker',
-        'Discord',
-      ],
-      color: 'bg-indigo-50 text-indigo-600 border border-indigo-200',
-    },
-    {
-      category: 'Soft Skills',
-      icon: <Users className="h-5 w-5" />,
-      skills: [
-        'Data-driven decision making',
-        'Problem-solving',
-        'Analytical thinking',
-        'Communication',
-        'Teamwork',
-        'Quick learner',
-      ],
-      color: 'bg-amber-50 text-amber-600 border border-amber-200',
-    },
-  ];
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] },
-    },
-  };
-
-  const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.3, ease: 'easeOut' },
-    },
-  };
-
   return (
-    <motion.div
-      initial={{ scale: 0.98, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
-      className="mx-auto w-full max-w-5xl rounded-4xl"
-    >
-      <Card className="w-full border-none bg-transparent px-0 pb-12 text-black shadow-none dark:text-white">
-        <CardHeader className="px-0 pb-1">
-          <CardTitle className="text-primary px-0 text-4xl font-bold">
-            Skills & Expertise
-          </CardTitle>
-        </CardHeader>
+    <section className="py-20 px-4" id="skills">
+      <div className="w-full max-w-screen-2xl mx-auto px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Skills & Expertise</h2>
+          <p className="text-purple-200 text-lg max-w-2xl mx-auto">
+            Proficient in modern technologies and frameworks
+          </p>
+        </motion.div>
 
-        <CardContent className="px-0">
-          <motion.div
-            className="space-y-8 px-0"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {skillsData.map((section, index) => (
-              <motion.div
-                key={index}
-                className="space-y-3 px-0"
-                variants={itemVariants}
-              >
-                <div className="flex items-center gap-2">
-                  {section.icon}
-                  <h3 className="text-accent-foreground text-lg font-semibold">
-                    {section.category}
-                  </h3>
-                </div>
-
-                <motion.div
-                  className="flex flex-wrap gap-2"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {section.skills.map((skill, idx) => (
-                    <motion.div
-                      key={idx}
-                      variants={badgeVariants}
-                      whileHover={{
-                        scale: 1.04,
-                        transition: { duration: 0.2 },
-                      }}
-                    >
-                      <Badge className={`border px-3 py-1.5 font-normal`}>
-                        {skill}
-                      </Badge>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </CardContent>
-      </Card>
-    </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {skillCategories.map((category, catIndex) => (
+            <motion.div
+              key={catIndex}
+              initial={{ opacity: 0, x: catIndex % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: catIndex * 0.1 }}
+              className="bg-[#2f2f2f] backdrop-blur-lg rounded-xl p-6 border border-[#A489AD]/20 shadow-lg"
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">{category.category}</h3>
+              <div className="space-y-4">
+                {category.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-purple-100 text-sm font-medium">{skill.name}</span>
+                      <span className="text-purple-300 text-sm font-semibold">{skill.level}%</span>
+                    </div>
+                    <div className="h-2 bg-purple-900/30 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.2 + skillIndex * 0.1, ease: 'easeOut' }}
+                        className="h-full bg-[#A489AD] rounded-full"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
