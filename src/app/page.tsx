@@ -111,6 +111,7 @@ const projects = [
     tech: ['Electron.js', 'FastAPI', 'ML / AI'],
     icon: HeartPulse,
     gradient: 'from-rose-400 via-pink-500 to-fuchsia-600',
+    image: '/projects/disease-prediction.svg',
   },
   {
     title: 'Immigration Services Website',
@@ -120,6 +121,7 @@ const projects = [
     tech: ['Next.js', 'Tailwind CSS', 'SEO'],
     icon: Globe2,
     gradient: 'from-sky-400 via-blue-500 to-indigo-600',
+    image: '/projects/immigration-services.png',
   },
   {
     title: 'Korangi City Lab',
@@ -129,6 +131,7 @@ const projects = [
     tech: ['React', 'Vite', 'Radix UI', 'Framer Motion'],
     icon: Microscope,
     gradient: 'from-amber-400 via-orange-500 to-red-500',
+    image: '/projects/korangi-city-lab.png',
   },
   {
     title: 'Checkpoint Spot',
@@ -138,6 +141,7 @@ const projects = [
     tech: ['React Native', 'Redux Toolkit', 'REST API'],
     icon: MapPin,
     gradient: 'from-violet-400 via-purple-500 to-fuchsia-600',
+    image: 'projects/main.svg',
   },
   {
     title: 'Employee Performance Rating',
@@ -147,6 +151,7 @@ const projects = [
     tech: ['React Native', 'Node.js', 'PostgreSQL'],
     icon: Users,
     gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
+    image: '/projects/employee-rating.svg',
   },
   {
     title: 'Al Jidar Steels',
@@ -156,6 +161,7 @@ const projects = [
     tech: ['Next.js', 'Tailwind CSS', 'A11y'],
     icon: Building2,
     gradient: 'from-slate-400 via-zinc-500 to-stone-600',
+    image: '/projects/al-jidar-steels.png',
   },
 ];
 
@@ -746,14 +752,24 @@ export default function Home() {
                   openChat(`Tell me more about the ${project.title} project`)
                 }
               >
-                {/* Gradient header */}
+                {/* Thumbnail (image if available, gradient+icon fallback) */}
                 <div
                   className={`relative aspect-video overflow-hidden bg-gradient-to-br ${project.gradient}`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <project.icon className="h-16 w-16 text-white/90 transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <project.icon className="h-16 w-16 text-white/90 transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <span className="absolute bottom-3 left-3 rounded-full bg-white/25 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
                     {project.category}
                   </span>
