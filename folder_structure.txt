@@ -16,12 +16,10 @@
 │   ├── final_memojis_ios.mp4
 │   ├── final_memojis.webm
 │   ├── landing-memojis.png
-│   ├── logo-yuvi.svg
+│   ├── logo-manal.svg
 │   ├── Plant_disease_detectionwebsite.png
-│   ├── profile-yuvi-03.jpeg
-│   ├── profile-yuvi.jpg
-│   ├── Resume_Yuvraj_Singh_AI.pdf
-│   └── Resume_Yuvraj_Singh_AI.png
+│   ├── manal_imran_april2026.pdf
+│   └── manal_imran.png
 ├── README.md
 ├── SETUP_INSTRUCTIONS.md
 ├── src

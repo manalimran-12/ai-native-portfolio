@@ -13,7 +13,7 @@ export function Presentation() {
     // Add a newline character after the emoji
     description:
       "Hey 👋\nI'm Yuvraj also known as Yuvi, building AI-powered experiences that talk back, think with you, and make static tech feel alive.",
-    src: '/profile-yuvi-03.jpeg',
+    src: '/memoji.svg',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
   };

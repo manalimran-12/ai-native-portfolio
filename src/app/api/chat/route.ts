@@ -15,6 +15,7 @@ export const maxDuration = 30;
 
 // ❌ Pas besoin de l'export ici, Next.js n'aime pas ça
 function errorHandler(error: unknown) {
+  console.error('[CHAT-API] stream error:', error);
   if (error == null) {
     return 'Unknown error';
   }
@@ -29,6 +30,16 @@ function errorHandler(error: unknown) {
 
 export async function POST(req: Request) {
   try {
+    if (!process.env.MISTRAL_API_KEY) {
+      console.error(
+        '[CHAT-API] MISTRAL_API_KEY is missing. Create a .env.local file with MISTRAL_API_KEY=...'
+      );
+      return new Response(
+        'Missing MISTRAL_API_KEY. Create a .env.local file in the project root with MISTRAL_API_KEY=your_key and restart the dev server.',
+        { status: 500 }
+      );
+    }
+
     const { messages } = await req.json();
     console.log('[CHAT-API] Incoming messages:', messages);
 

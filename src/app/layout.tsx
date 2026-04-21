@@ -14,10 +14,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yuvraj Singh Portfolio",
+  title: "Manal Imran Portfolio",
   description: "Interactive portfolio with an AI-powered Memoji that answers questions about me, my skills, and my experience",
   keywords: [
-    "Yuvraj Singh", 
+    "Manal Imran", 
     "Portfolio", 
     "Developer", 
     "AI", 
@@ -30,24 +30,22 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Yuvraj Singh",
-      url: "https://yuvraj.bio",
+      name: "Manal Imran",
     },
   ],
-  creator: "Yuvraj Singh",
+  creator: "Manal Imran",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yuvraj.bio",
-    title: "Yuvraj Singh Portfolio",
+    title: "Manal Imran Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    siteName: "Yuvraj Singh Portfolio",
+    siteName: "Manal Imran Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yuvraj Singh Portfolio",
+    title: "Manal Imran Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    creator: "@yuvrajsingh",
+    creator: "@manalimran",
   },
   icons: {
     icon: [
