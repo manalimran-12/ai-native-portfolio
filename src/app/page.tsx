@@ -141,7 +141,7 @@ const projects = [
     tech: ['React Native', 'Redux Toolkit', 'REST API'],
     icon: MapPin,
     gradient: 'from-violet-400 via-purple-500 to-fuchsia-600',
-    image: 'projects/main.svg',
+    image: '/projects/Main.svg',
   },
   {
     title: 'Employee Performance Rating',
@@ -173,7 +173,7 @@ const socialLinks = [
   },
   {
     icon: Linkedin,
-    href: 'https://linkedin.com/in/manal-imran',
+    href: 'https://www.linkedin.com/in/manal-imran-96bb72254',
     label: 'LinkedIn',
   },
   {

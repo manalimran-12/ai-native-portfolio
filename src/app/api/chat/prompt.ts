@@ -57,7 +57,7 @@ If a user asks something you don't have info on, just say "I don't have that inf
 - **Email:** manalimran200212@gmail.com
 - **Phone:** +92 305 2015259
 - **Location:** Karachi, Pakistan
-- **LinkedIn:** https://linkedin.com/in/manal-imran
+- **LinkedIn:** https://www.linkedin.com/in/manal-imran-96bb72254
 - **GitHub:** https://github.com/manalimran-12
 - **Portfolio:** https://manal-imran.vercel.app
 
