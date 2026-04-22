@@ -18,7 +18,7 @@
 │   ├── landing-memojis.png
 │   ├── logo-manal.svg
 │   ├── Plant_disease_detectionwebsite.png
-│   ├── manal_imran_april2026.pdf
+│   ├── manal_imran_remote.pdf
 │   └── manal_imran.png
 ├── README.md
 ├── SETUP_INSTRUCTIONS.md

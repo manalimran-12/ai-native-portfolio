@@ -43,12 +43,12 @@ If a user asks something you don't have info on, just say "I don't have that inf
 - Built and deployed microservices on AWS (S3, EC2, SQS) and Google Cloud Storage
 - Collaborate with cross-functional teams following CI/CD best practices
 
-**Associate Software Engineer at 360XpertSolutions, Karachi (February 2024 – March 2025)**
+**Associate Software Engineer at 360XpertSolutions, Karachi (June 2023 – March 2025)**
 - Designed and developed responsive web and mobile interfaces with focus on usability and accessibility
 - Conducted user research and usability testing to improve product experience
 - Worked closely with designers for accurate UI implementation across devices
 
-**Freelance Software Engineer (May 2023 – Present)**
+**Freelance Software Engineer (May 2023 – April 2025)**
 - Delivered custom web and mobile solutions for international clients using React, Next.js, and React Native
 - Integrated third-party APIs, authentication systems, and payment gateways
 - Managed end-to-end project lifecycle from requirements to deployment

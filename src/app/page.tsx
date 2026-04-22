@@ -79,7 +79,7 @@ const experiences = [
   {
     title: 'Associate Software Engineer',
     company: '360XpertSolutions — Karachi, Pakistan',
-    period: 'Feb 2024 – Mar 2025',
+    period: 'Jun 2023 – Mar 2025',
     description:
       'Designed and developed responsive web and mobile interfaces with a strong focus on usability and accessibility. Conducted user research and usability testing with cross-functional design teams.',
     icon: Briefcase,
@@ -87,7 +87,7 @@ const experiences = [
   {
     title: 'Freelance Software Engineer',
     company: 'Remote — International Clients',
-    period: 'May 2023 – Present',
+    period: 'May 2023 – Apr 2025',
     description:
       'Delivered custom web & mobile solutions using React, Next.js, and React Native. Integrated third-party APIs, authentication systems, and payment gateways across the full project lifecycle.',
     icon: Briefcase,
@@ -183,7 +183,7 @@ const socialLinks = [
   },
 ];
 
-const CV_PATH = '/Manal%20Imran%202026.pdf';
+const CV_PATH = '/manal_imran_remote.pdf';
 
 /* ────────────────────────── Animation helpers ────────────────────────── */
 

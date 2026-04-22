@@ -14,7 +14,7 @@ export function Resume() {
     lastUpdated: 'July 2025',
     fileSize: '0.3 MB',
     previewImageSrc: '/manal_imran.png',
-    downloadUrl: '/manal_imran_april2026.pdf',
+    downloadUrl: '/manal_imran_remote.pdf',
   };
 
   const handleDownload = () => {
