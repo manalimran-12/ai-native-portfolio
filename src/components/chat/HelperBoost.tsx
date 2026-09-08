@@ -9,21 +9,22 @@ import {
 } from '@radix-ui/react-tooltip';
 import { motion } from 'framer-motion';
 import {
+  Briefcase,
   BriefcaseBusiness,
-  BriefcaseIcon,
   ChevronDown,
   ChevronRight,
   ChevronUp,
   CircleEllipsis,
-  CodeIcon,
-  GraduationCapIcon,
+  Code,
+  GraduationCap,
   Laugh,
   Layers,
-  MailIcon,
+  Mail,
   PartyPopper,
   Sparkles,
   UserRoundSearch,
   UserSearch,
+  type LucideIcon,
 } from 'lucide-react';
 import { useState } from 'react';
 import { Drawer } from 'vaul';
@@ -76,7 +77,7 @@ const questionsByCategory = [
   {
     id: 'professional',
     name: 'Professional',
-    icon: BriefcaseIcon,
+    icon: Briefcase,
     questions: [
       'Can I see your resume?',
       'What makes you a valuable team member?',
@@ -88,13 +89,13 @@ const questionsByCategory = [
   {
     id: 'projects',
     name: 'Projects',
-    icon: CodeIcon,
+    icon: Code,
     questions: ['What projects are you most proud of?'],
   },
   {
     id: 'skills',
     name: 'Skills',
-    icon: GraduationCapIcon,
+    icon: GraduationCap,
     questions: [
       'What are your skills?',
     ],
@@ -114,7 +115,7 @@ const questionsByCategory = [
   {
     id: 'contact',
     name: 'Contact & Future',
-    icon: MailIcon,
+    icon: Mail,
     questions: [
       'How can I reach you?',
       "What kind of project would make you say 'yes' immediately?",
@@ -284,7 +285,7 @@ export default function HelperBoost({
 // Component for each category section
 interface CategorySectionProps {
   name: string;
-  Icon: React.ElementType;
+  Icon: LucideIcon;
   questions: string[];
   onQuestionClick: (question: string) => void;
 }

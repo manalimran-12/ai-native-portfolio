@@ -107,9 +107,10 @@ export default function ChatPanel({
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-neutral-200 px-5 py-4 dark:border-neutral-800">
+        <div className="relative flex items-center justify-between overflow-hidden border-b border-neutral-200 bg-gradient-to-r from-purple-600/10 via-transparent to-pink-500/10 px-5 py-4 dark:border-neutral-800">
+          <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-500" />
           <div className="flex items-center gap-3">
-            <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-purple-100 dark:bg-purple-900/30">
+            <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 ring-2 ring-purple-500/30">
               <Image
                 src="/memoji.svg"
                 alt="Avatar"
@@ -139,7 +140,7 @@ export default function ChatPanel({
         <div className="custom-scrollbar flex-1 overflow-y-auto p-5">
           {messages.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center text-center">
-              <div className="mb-4 rounded-full bg-purple-100 p-4 dark:bg-purple-900/30">
+              <div className="mb-4 rounded-full bg-gradient-to-br from-purple-500/15 to-pink-500/15 p-4">
                 <MessageCircle className="h-8 w-8 text-purple-500" />
               </div>
               <h4 className="mb-1 font-medium text-neutral-800 dark:text-neutral-200">
@@ -199,7 +200,7 @@ export default function ChatPanel({
                     <div
                       className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                         message.role === 'user'
-                          ? 'bg-purple-600 text-white'
+                          ? 'bg-gradient-to-br from-purple-600 to-pink-600 text-white'
                           : 'bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200'
                       }`}
                     >
@@ -278,7 +279,7 @@ export default function ChatPanel({
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-600 text-white transition-colors hover:bg-purple-700 disabled:opacity-50"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-pink-600 text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30 disabled:opacity-50 disabled:hover:scale-100"
             >
               <ArrowUp className="h-4 w-4" />
             </button>

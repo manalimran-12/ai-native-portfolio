@@ -15,6 +15,9 @@
 
 # next.js
 /.next/
+/.next-verify/
+/.next-production/
+/artifacts/
 /out/
 
 # production
