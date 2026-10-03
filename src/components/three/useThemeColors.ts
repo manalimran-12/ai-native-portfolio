@@ -14,15 +14,15 @@ export interface ThemeAccentColors {
 // and the --background token from globals.css, so the 3D lighting stays
 // in sync with the rest of the theme without parsing oklch() at runtime.
 const LIGHT: ThemeAccentColors = {
-  accent: '#7e22ce',
-  accentSoft: '#db2777',
-  ambient: '#f4f4f5',
+  accent: '#ac5c44',
+  accentSoft: '#b7644b',
+  ambient: '#f5f4f4',
 };
 
 const DARK: ThemeAccentColors = {
-  accent: '#c084fc',
-  accentSoft: '#f472b6',
-  ambient: '#270b36',
+  accent: '#deb0a2',
+  accentSoft: '#d7a08f',
+  ambient: '#2d1a14',
 };
 
 export function useThemeColors(): ThemeAccentColors {

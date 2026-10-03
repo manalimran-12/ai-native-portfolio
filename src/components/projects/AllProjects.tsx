@@ -5,7 +5,7 @@ import { data } from "@/components/projects/Data";
 
 export default function AllProjects() {
   const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} layout={true} />
+    <Card key={card.title} card={card} index={index} layout={true} />
   ));
   console.log(data[0]);
 

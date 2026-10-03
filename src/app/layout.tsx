@@ -50,12 +50,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logo-manal.svg",
-        sizes: "any",
+        url: "/favicon.svg",
+        type: "image/svg+xml",
       }
     ],
-    shortcut: "/logo-manal.svg?v=2",
-    apple: "/apple-touch-icon.svg?v=2",
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -68,7 +68,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/logo-manal.svg" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* Google Analytics */}
         <Script
           async

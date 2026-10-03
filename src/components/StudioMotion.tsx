@@ -86,13 +86,13 @@ export function StudioMarquee() {
   return (
     <div
       className="studio-marquee-divider"
-      aria-label="Creative thinking, clean code, real impact"
+      aria-label="From Figma to production. Web and mobile. Built in Creativity."
     >
       <div aria-hidden="true">
         {[0, 1, 2, 3].map((i) => (
           <span key={i}>
-            Creative thinking <b>✳</b> <em>Clean code</em> <b>✳</b> Real impact{' '}
-            <b>✳</b>
+            From Figma <em>to production</em> <b>/</b> Web &amp; mobile{' '}
+            <b>/</b> <em>Built with creativity</em> <b>/</b>
           </span>
         ))}
       </div>

@@ -420,7 +420,7 @@ export default function CinematicPortfolio() {
                 style={{ '--delay': `${i * -0.7}s` } as CSSProperties}
                 key={skill}
               >
-                <span>{['✳', '◇', '⌘', '⬡'][i % 4]}</span>
+                <span className="cine-skill-dot" aria-hidden="true" />
                 {skill}
               </motion.div>
             ))}
@@ -493,7 +493,6 @@ export default function CinematicPortfolio() {
               Have an idea?
               <br />
               Let’s make it <span>real.</span>
-              <span className="cine-contact-star">✳</span>
             </h2>
             <p>
               Looking for a software engineer, a creative collaborator,

@@ -3,24 +3,23 @@ import { z } from 'zod';
 
 export const getInternship = tool({
   description:
-    "Gives a summary of what kind of internship I'm looking for, plus my contact info and how to reach me. Use this tool when the user asks about my internship search or how to contact me for opportunities.",
+    "Gives a summary of what kind of role or opportunity I'm looking for, plus my contact info and how to reach me. Use this tool when the user asks about my job search, availability, or how to contact me for opportunities.",
   parameters: z.object({}),
   execute: async () => {
     return `Here’s what I’m looking for 👇
 
-- 📅 **Availability**: Open to immediate opportunities
-- 🌍 **Location**: Preferably **Gurugram** or anywhere in the **India**
-- 🧑‍💻 **Focus**: Data Science, AI/ML, Full-stack development
-- 🛠️ **Stack**: Python, React, SQL, TensorFlow, Power BI, Tableau
-- ✅ **What I bring**: Experience in building data-driven dashboards, optimizing data pipelines, and developing end-to-end analytics projects. Proven ability to translate raw data into actionable business insights.
-- 🔥 I move fast, learn faster, and I’m HUNGRYYYYY for big challenges
+- 📅 **Availability**: Open to new roles and freelance projects
+- 🌍 **Location**: Based in **Karachi, Pakistan**, open to **remote** and **international** roles
+- 🧑‍💻 **Focus**: Full-stack web & mobile development, AI integrations
+- 🛠️ **Stack**: React, Next.js, React Native, Node.js, Nest.js, TypeScript, AWS, GCP
+- ✅ **What I bring**: 3+ years building web and mobile apps end to end, from Figma designs to deployed microservices, including Stripe subscription billing and cloud deployments.
 
 📬 **Contact me** via:
-- Email: yuvraj0412s@gmail.com
-- LinkedIn: [linkedin.com/in/yuvraj-singh-77601827a](- LinkedIn: https://linkedin.com/in/yuvraj-singh-77601827a)
-- GitHub: [github.com/yuvraj0412s](https://github.com/yuvraj0412s)
+- Email: manalimran200212@gmail.com
+- LinkedIn: [linkedin.com/in/manal-imran-96bb72254](https://www.linkedin.com/in/manal-imran-96bb72254)
+- GitHub: [github.com/manalimran-12](https://github.com/manalimran-12)
 
-Let's build cool shit together ✌️
+Would love to hear from you ✌️
     `;
   },
 });

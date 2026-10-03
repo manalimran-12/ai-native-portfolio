@@ -17,10 +17,15 @@ import {
 } from 'react';
 import {
   BufferGeometry,
+  CubicBezierCurve3,
+  CurvePath,
   Float32BufferAttribute,
   Group,
+  LineCurve3,
   MathUtils,
   SRGBColorSpace,
+  TubeGeometry,
+  Vector3,
 } from 'three';
 import type { MotionValue } from 'framer-motion';
 
@@ -64,6 +69,23 @@ function createRibbon() {
   return geometry;
 }
 
+// Manal's "m." monogram, drawn as a single continuous stroke.
+function createMonogram() {
+  const v = (x: number, y: number) => new Vector3(x, y, 0);
+  const path = new CurvePath<Vector3>();
+  path.add(new LineCurve3(v(-0.62, -0.42), v(-0.62, 0.12)));
+  path.add(
+    new CubicBezierCurve3(v(-0.62, 0.12), v(-0.62, 0.48), v(-0.18, 0.48), v(-0.18, 0.12))
+  );
+  path.add(new LineCurve3(v(-0.18, 0.12), v(-0.18, -0.42)));
+  path.add(new LineCurve3(v(-0.18, -0.42), v(-0.18, 0.12)));
+  path.add(
+    new CubicBezierCurve3(v(-0.18, 0.12), v(-0.18, 0.48), v(0.26, 0.48), v(0.26, 0.12))
+  );
+  path.add(new LineCurve3(v(0.26, 0.12), v(0.26, -0.42)));
+  return new TubeGeometry(path, 220, 0.075, 20, false);
+}
+
 function Laptop() {
   const screen = useTexture('/projects/korangi-city-lab.png');
   screen.colorSpace = SRGBColorSpace;
@@ -76,7 +98,7 @@ function Laptop() {
         position={[0, -1.04, 0.75]}
       >
         <meshStandardMaterial
-          color="#25222e"
+          color="#2b2825"
           metalness={0.85}
           roughness={0.24}
         />
@@ -86,7 +108,7 @@ function Laptop() {
         radius={0.05}
         position={[0, -0.968, 0.58]}
       >
-        <meshStandardMaterial color="#08080d" roughness={0.6} />
+        <meshStandardMaterial color="#0b0a0a" roughness={0.6} />
       </RoundedBox>
       {Array.from({ length: 5 }, (_, row) =>
         Array.from({ length: 13 }, (_, column) => (
@@ -95,7 +117,7 @@ function Laptop() {
             position={[-1.59 + column * 0.265, -0.954, 0.09 + row * 0.22]}
           >
             <boxGeometry args={[0.21, 0.014, 0.155]} />
-            <meshStandardMaterial color="#37313f" roughness={0.45} />
+            <meshStandardMaterial color="#3c3834" roughness={0.45} />
           </mesh>
         ))
       )}
@@ -104,7 +126,7 @@ function Laptop() {
         radius={0.045}
         position={[0, -0.966, 1.65]}
       >
-        <meshStandardMaterial color="#4a414f" metalness={0.7} roughness={0.3} />
+        <meshStandardMaterial color="#4d4843" metalness={0.7} roughness={0.3} />
       </RoundedBox>
       <group position={[0, -1, -0.45]} rotation={[-0.14, 0, 0]}>
         <RoundedBox
@@ -113,7 +135,7 @@ function Laptop() {
           position={[0, 1.26, 0]}
         >
           <meshStandardMaterial
-            color="#35303f"
+            color="#3b3834"
             metalness={0.9}
             roughness={0.2}
           />
@@ -124,7 +146,7 @@ function Laptop() {
         </mesh>
         <mesh position={[0, 2.465, 0.061]}>
           <circleGeometry args={[0.018, 12]} />
-          <meshBasicMaterial color="#656276" />
+          <meshBasicMaterial color="#746c64" />
         </mesh>
       </group>
     </group>
@@ -139,9 +161,17 @@ function World({
   mobile: boolean;
 }) {
   const ribbon = useMemo(createRibbon, []);
+  const monogram = useMemo(createMonogram, []);
   const sculpture = useRef<Group>(null),
+    mark = useRef<Group>(null),
     laptop = useRef<Group>(null);
-  useEffect(() => () => ribbon.dispose(), [ribbon]);
+  useEffect(
+    () => () => {
+      ribbon.dispose();
+      monogram.dispose();
+    },
+    [ribbon, monogram]
+  );
   useFrame(({ clock, pointer }, delta) => {
     const p = progress.get(),
       t = clock.elapsedTime;
@@ -163,6 +193,17 @@ function World({
       sculpture.current.rotation.y = t * 0.12 + p * Math.PI * 2;
       sculpture.current.rotation.z = -0.6 + p * 2;
       sculpture.current.scale.setScalar((mobile ? 0.61 : 1.15) * (1 - morph));
+      // The monogram follows the sculpture but stays facing the viewer.
+      if (mark.current) {
+        mark.current.visible = sculpture.current.visible;
+        mark.current.position.copy(sculpture.current.position);
+        mark.current.scale.copy(sculpture.current.scale);
+        mark.current.rotation.set(
+          pointer.y * -0.15,
+          Math.sin(t * 0.6) * 0.35 + pointer.x * 0.2,
+          0
+        );
+      }
     }
     if (laptop.current) {
       laptop.current.visible = morph > 0.015;
@@ -184,8 +225,8 @@ function World({
   return (
     <>
       <ambientLight intensity={0.5} />
-      <directionalLight position={[2, 5, 5]} intensity={3} color="#e9ddff" />
-      <pointLight position={[-4, 0, 3]} intensity={25} color="#6c28ff" />
+      <directionalLight position={[2, 5, 5]} intensity={3} color="#f6eae6" />
+      <pointLight position={[-4, 0, 3]} intensity={25} color="#c77860" />
       <Environment resolution={128} frames={1}>
         <Lightformer
           form="rect"
@@ -200,7 +241,7 @@ function World({
           position={[-5, 0, 3]}
           scale={[2, 8, 1]}
           rotation={[0, Math.PI / 2, 0]}
-          color="#a982ff"
+          color="#deb0a2"
         />
         <Lightformer
           form="rect"
@@ -214,13 +255,13 @@ function World({
           intensity={3}
           position={[0, 0, 5]}
           scale={5}
-          color="#ded0ff"
+          color="#f3e1dc"
         />
       </Environment>
       <group ref={sculpture}>
         <mesh geometry={ribbon}>
           <meshPhysicalMaterial
-            color="#bfa3ec"
+            color="#ddbcb2"
             metalness={1}
             roughness={0.18}
             clearcoat={1}
@@ -229,19 +270,29 @@ function World({
         <mesh rotation={[1.2, 0.5, 0]}>
           <torusGeometry args={[2.15, 0.012, 8, 128]} />
           <meshStandardMaterial
-            color="#c4a2ff"
-            emissive="#7b42c6"
+            color="#e7c5ba"
+            emissive="#ac6f5c"
             emissiveIntensity={0.7}
             metalness={0.6}
             roughness={0.2}
           />
         </mesh>
-        <mesh>
-          <icosahedronGeometry args={[0.35, 1]} />
-          <meshStandardMaterial
-            color="#d9bcff"
-            metalness={0.95}
-            roughness={0.1}
+      </group>
+      <group ref={mark}>
+        <mesh geometry={monogram} position={[0.06, 0.02, 0]}>
+          <meshPhysicalMaterial
+            color="#eed5cd"
+            metalness={1}
+            roughness={0.16}
+            clearcoat={1}
+          />
+        </mesh>
+        <mesh position={[0.52, -0.38, 0]}>
+          <sphereGeometry args={[0.1, 32, 32]} />
+          <meshPhysicalMaterial
+            color="#d79a87"
+            metalness={0.6}
+            roughness={0.55}
           />
         </mesh>
       </group>
